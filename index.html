@@ -1,140 +1,1168 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Serine Avetisyan - Psycholinguist, Researcher and Data Analyst specializing in language structures and cognitive processing">
+  
+  <link rel="icon" href="https://raw.githubusercontent.com/savetisyan/savetisyan.github.io/master/favicon.ico" type="image/x-icon">
 
-body {
-	background-color: #f1f0ee; 
-	margin-top:40; 
-	margin-left:150; 
-	margin-right:150;
-	margin-bottom:40; 
+  <title>Serine Avetisyan | Psycholinguist & Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary: #5a4635;
+      --secondary: #B87333;
+      --background: #f3eee8;
+      --light: #ffffff;
+      --dark: #3b3b3b;
+      --transition: all 0.3s ease;
+    }
+
+/* Improved Dark Mode Variables */
+body.dark-mode {
+  --primary: #d1a05f;       /* Warmer, brighter gold tone for headers/buttons */
+  --secondary: #d1a05f;     /* Brighter copper tone for accents/links */
+  --background: #1e1e1e;    /* Near-black for better contrast */
+  --light: #2a2a2a;         /* Slightly lighter for subtle backgrounds */
+  --dark: #ffffff;          /* Pure white text for best readability */
 }
 
-	
-h1 {
-	color: #0db4b9;
-  	font-family: verdana;
-  	font-size: 200%;
+body.dark-mode .navbar a:hover,
+body.dark-mode .navbar a.active {
+  color: #ffffff;
 }
 
-p {
-  color: #303030;
-  font-family: courier;
-  font-size: 100%;
+body.dark-mode .nav-links a::after {
+  background-color: #ffffff;
 }
 
-table, tr, td {
-  color: #303030;
-  font-family: courier;
-  font-size: 100%;
+/* Dark mode contact section icon symbol color */
+body.dark-mode .contact-icon {
+  color: #000000; /* black icon inside the circle */
 }
 
-ul {
-    padding: 0;
-    color: #303030;
-    font-family: courier;
-    font-size: 100%;
-
+/* Dark mode submit button text color */
+body.dark-mode .submit-button {
+  color: #000000; /* black text */
 }
 
 
-* {
+    /* Base Styles */
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--dark);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Navigation */
+    .navbar {
+      background-color: var(--primary);
+      padding: 15px 30px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-sizing: border-box;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+.logo {
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+  color: var(--light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--secondary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a:focus {
+      outline: 2px dotted var(--secondary);
+      outline-offset: 3px;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      color: var(--light);
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-left: 15px;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      color: var(--secondary);
+      transform: rotate(30deg);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: var(--light);
+      margin: 4px 0;
+      transition: var(--transition);
+    }
+    
+    body.dark-mode .theme-toggle:hover i.fa-sun {
+  color: #ffffff;
+}
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 80px 20px 60px;
+      box-sizing: border-box;
+    }
+
+.hero-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 20px 60px;
   box-sizing: border-box;
 }
 
 
-/* Create two equal columns that floats next to each other */
-.column {
+
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    
+    
+    /* Floating image for hero on desktop */
+.profile-img-float {
   float: left;
-  width: 50%;
-  padding: 10px;
-  height: 270px; 
+  width: 320px;
+  height: auto;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--light);
+  object-fit: cover;
+  transition: var(--transition);
 }
 
-img {
-  border: 8px double #e76d89;
-  border-radius: 50%;
-}  
-</style>
+/* Mobile override to reset float */
+@media (max-width: 768px) {
+  .profile-img-float {
+    float: none;
+    display: block;
+    margin: 0 auto 20px;
+    width: 220px;
+  }
+  
+  .hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-wrapper .about-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+}
+
+
+    /* Social Media */
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary);
+      color: var(--light);
+      border-radius: 50%;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      background-color: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    /* About Text */
+    .about-text {
+      max-width: 900px;
+    }
+
+    .about-text h1 {
+      margin-top: 0;
+      font-size: 2.8rem;
+      color: var(--primary);
+      line-height: 1.2;
+      transition: color 0.3s ease;
+    }
+
+    .title {
+      font-size: 1.3rem;
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+    }
+
+    .about-text p {
+      color: var(--dark);
+      margin-bottom: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: var(--primary);
+      color: var(--light);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-button:hover {
+      background-color: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Section Styles */
+    section {
+      padding: 25px 20px;
+    }
+    
+    section p {
+  text-align: justify;  
+  text-justify: inter-word;
+}
+
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto 30px;
+      padding: 40px 60px;
+      background-color: var(--light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border-radius: 15px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-title {
+      color: var(--primary);
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-top: 0;
+      position: relative;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+    
+    .section-title + * { 
+      margin-top: 20px; 
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--secondary);
+      border-radius: 2px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Education Section */
+    .education-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .education-list li {
+      margin-bottom: 20px;
+      padding-left: 50px;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    .education-list i {
+      color: var(--secondary);
+      position: absolute;
+      left: 0;
+      top: 8px;
+      font-size: 1.8rem;
+      line-height: 1rem;
+    }
+
+    .education-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .education-honor {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    .education-highlight {
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    .education-details-group p {
+      margin-top: 2px;
+      margin-bottom: 2px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .education-date {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    /* Publications Section */
+    .publication-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .publication-icon {
+      font-size: 1.8rem;
+      color: var(--secondary);
+      margin-right: 25px;
+      min-width: 25px;
+      line-height: 2.5rem;
+    }
+
+    .publication-content {
+      flex: 1;
+    }
+
+    .publication-title {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+      transition: color 0.3s ease;
+    }
+
+    .publication-text {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .publication-authors {
+      margin-bottom: 5px;
+    }
+
+    .publication-journal {
+      font-style: italic;
+    }
+
+    .publication-year {
+      display: inline-block;
+      padding: 2px 10px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      margin-right: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .view-link {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: normal;
+    }
+
+    .view-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Research Styles */
+    .research-tags ul {
+      padding-left: 20px;
+    }
+
+    .research-tags li {
+      margin-bottom: 10px;
+      color: var(--dark);
+      transition: color 0.3s ease;
+      font-size: 1rem;
+    }
+
+    /* Utility Classes */
+    .rotate-45 {
+      transform: rotate(45deg);
+      display: inline-block;
+    }
+
+   /* Contact Styles */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      align-items: flex-start; /* Ensure both columns start at the same position */
+    }
+
+.contact-info {
+    padding-top: 0; /* Remove top padding that's pushing content down */
+}
+
+    .contact-item {
+      display: flex;
+    align-items: flex-start; /* Align to top instead of center for better spacing */
+    margin-bottom: 30px; /* Increase space between contact items */
+}    
+
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-text {
+      line-height: 1.3;
+      font-size: 1rem;
+    }
+    
+.contact-text a,
+.contact-text p {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: var(--primary);
+    transition: color 0.3s ease;
+    display: block; /* Make label a block element */
+    margin-bottom: 8px; /* Add space between label and content */
+}
+
+
+.contact-text a {
+    color: var(--dark); /* Match regular text color */
+    text-decoration: none;
+    pointer-events: none; /* Disable link behavior */
+    font-weight: normal; /* Ensure normal font weight */
+    cursor: text; /* Show text cursor instead of hand cursor */
+}
+    .contact-text a:hover {
+      color: var(--secondary);
+    }
+    
+    
+ .contact-form {
+    display: grid;
+    gap: 15px;
+    margin-top: 0; /* Ensure form starts at the top of its container */
+    padding-top: 0; /* Remove any padding that might push it down */
+} 
+
+.contact-form h3,
+.contact-info h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-label {
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: var(--primary);
+      transition: color 0.3s ease;
+    }
+
+    .form-input, 
+    .form-textarea {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      font-size: 1rem;
+    }
+
+    body.dark-mode .form-input,
+    body.dark-mode .form-textarea {
+      border-color: #555;
+    }
+
+    .form-input:focus, 
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(215, 161, 132, 0.2);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      padding: 12px 24px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem; 
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 10px;
+    }
+
+    .submit-button:hover {
+      background-color: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 40px 20px;
+      text-align: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .footer-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .footer-links a {
+      color: var(--light);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary);
+    }
+
+    .copyright {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--secondary);
+      transform: translateY(-5px);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+      .hero-content {
+        gap: 30px;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 15px 20px;
+      }
+      
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary);
+        flex-direction: column;
+        padding: 30px;
+        gap: 20px;
+        align-items: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+        z-index: 99;
+      }
+      
+      .nav-links.active {
+         display: flex;
+        transform: translateY(0);
+      }
+
+      
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .menu-toggle.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      
+      .menu-toggle.active div:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .menu-toggle.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+      
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .profile-img {
+        width: 220px;
+        height: 260px;
+      }
+      
+      .about-text {
+        max-width: 100%;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
-
-
-
 <body>
 
-<div class="container">     
-<div class="row">
+ <header class="navbar">
+    <a href="#" class="logo">SA</a>
+    
+    
+    <div class="menu-toggle" aria-label="Toggle menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    
+    <nav class="nav-links">
+      <a href="#introduction" class="active">Home</a>
+      <a href="#education">Education</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+         <button class="theme-toggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
+    </nav>
+  </header>
 
-<div class="column" style="background-color: #1d1145">
-	<h1> Serine Avetisyan</h1>
-	<ul style="list-style-type: none; color:white;">
-<li style="padding-bottom:8px">University of Potsdam</li>
-<li style="padding-bottom:8px">Department of Linguistics</li>
-<li style="padding-bottom:8px">Karl-Liebknecht-Str. 24/25</li>
-<li style="padding-bottom:10px">14476 Potsdam, Germany</li>
-<li">&#x1F4E7 firstname.lastname [at] uni-potsdam.de</li>
-</ul></div>
+  <section class="hero" id="introduction">
+     <div class="hero-wrapper">
+       
+        
+      
+      <div class="about-text">
+        <img src="https://www.dropbox.com/scl/fi/plhqvcdhrnvd25rygw9jb/IMG_3402-2.jpg?rlkey=qssdiwwkx7hyatxekvrdxk6db&st=jmj6umn1&raw=1" 
+        alt="Serine Avetisyan portrait" 
+         class="profile-img-float" 
+        loading="lazy">
+        <h1>Serine Avetisyan</h1>
+        <p class="title">Psycholinguist | Researcher | Data Analyst</p>
+        <p>
+          I’m a psycholinguist with a PhD that explored the relationship between working memory and sentence comprehension. When we read or listen, we process sentences one word at a time—relying on memory to connect what we’re hearing or reading with what came before. My research focused on the memory cues we use to match verbs with their grammatical subjects (basically, figuring out who’s doing what), using Eastern Armenian as a test language.
+        </p>
+        <p>
+          While I love addressing theoretical questions, I’m also drawn to research with real-world impact. Between 2021 and 2023, I partnered with Armenia’s Education Inspection Body (EIB) to design and lead a pilot study assessing reading comprehension among 4th graders across the country. The project laid the foundation for EIB’s annual literacy assessments.
+        </p>
+        
+        <p>
+          And in the midst of it all, I’ve been raising my baby girl—who’s now growing into her relative independence and giving me the chance to pursue new research opportunities.
+          </p>
+           <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+              
+              
+      <a href="#contact" class="cta-button">Get in Touch</a>
+        <div class="social-links" style="margin-top: 0;">
+          
+           <a href="https://scholar.google.com/citations?user=NRiB7jsAAAAJ&hl=en" target="_blank" class="social-link" aria-label="Google Scholar">
+            <i class="fas fa-graduation-cap"></i>
+              </a>
+          
+                
+           </div>
+      </div>
+    </div>
+      </div>
+    
+  </section>
 
+    <section id="education">
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+    <ul class="education-list">
+      
+      
+            <li>
+  <i class="fas fa-graduation-cap"></i> 
+  <strong class="education-title">Ph.D. in Psycholinguistics <span class="education-honor">(Grade: Magna Cum Laude)</span></strong>
+  <div class="education-details-group">
+    <p class="education-program"><em>International Doctorate in Experimental Approaches to Language and Brain (IDEALAB)</em></p>
+    <p class="education-details">University of Potsdam (DE), Groningen (NL), Trento (IT), Newcastle (UK), and Macquarie (AU)</p>
+    <p class="education-dissertation">Dissertation: <span class="education-highlight">"Case and Misinterpretation in Agreement Processing"</span></p>
+    <p class="education-advisors">Advisors: Shravan Vasishth, Roelien Bastiaanse, and Sol Lago</p>
+    <p class="education-date">2016 - 2024</p>
+  </div>
+</li>
 
-<div class="column" style="text-align: center; background-color: #1d1145">
-      <img src="https://www.dropbox.com/s/qdg6d3clyj0q1qv/IMG_5292.jpg?raw=1"
-      height="250"></div>
-
-</div>
-</div>
-
-
-<h1>About me</h1>
-<p align="justify"> In 2016, I started my PhD under the supervision of Prof. Dr. <a href="http://www.ling.uni-potsdam.de/~vasishth/">Shravan Vasishth</a> and Prof. Dr. <a href="http://sollago.github.io/">Sol Lago</a>. My research focuses on memory mechanisms that underlie the computation of grammatical relations between sentence constituents. I am currently using behavioral measures (e.g., self-paced reading, eye-tracking) and Bayesian modelling to investigate how number agreement is computed between subject and verb in Eastern Armenian, with a focus on why this computation can fail in the presence of other linguistic items with similar features in working memory. </p>
-
-
-
-<h1>Background</h1>
-<ul style="list-style-type: none; margin-left: 4em; text-indent: -4em">
-<li style="padding-bottom:15px">2015 &nbsp M.Sc. in Clinical Linguistics, University of Potsdam (DE), Groningen (NL), and Eastern Finland (FI)</li>
-<li>2007 &nbsp Specialist Diploma in Teaching English and French, Yerevan State Linguistic University (ARM)</li>
-</ul>
-
-
-
-<h1>Publications</h1>
-<ul style="list-style-type: none">
-	<li style="padding-bottom:15px">Paape, D., <b>Avetisyan, S.</b>, Lago, S., & Vasishth, S. Modeling misretrieval and feature substitution in agreement attraction: A computational evaluation. <a href="https://psyarxiv.com/957e3">[preprint]</a> </li>
-	<li><b>Avetisyan, S.</b>, Lago, S., & Vasishth, S. (2020). Does case-marking affect subject-verb agreement attraction in sentence comprehension? <i>Journal of Memory and Language, 112</i>, 104087. <a href="https://www.sciencedirect.com/science/article/pii/S0749596X20300012">[paper]</a> </li>
-
-</ul>
-
-<h1>Conference contributions</h1>
-<ul style="list-style-type:none">
-
-	<li style="padding-bottom:15px"><strong>Avetisyan, S.</strong>, Lago, S., & Vasishth, S. (2020). Dissociation of case and number information in agreement processing. Architectures and Mechanisms for Language Processing (AMLaP), Potsdam, Germany, September 3-5. <a href="https://osf.io/gyhkf/">[abstract]</a> </li>
-
-  <li style="padding-bottom:15px">Paape, D., <strong>Avetisyan, S.</strong>, Lago, S., & Vasishth, S. (2019). Modeling misretrieval and feature substitution in agreement attraction. Architectures and Mechanisms for Language Processing (AMLaP), Moscow, Russia, September 6-8. <a href="https://www.ling.uni-potsdam.de/~paape/PaapeEtAl-AMLaP2019-modeling.pdf">[poster]</a> </li>
+      
+      <li>
+  <i class="fas fa-graduation-cap"></i> 
+  <strong class="education-title">M.Sc. in Clinical Linguistics <span class="education-honor">(Grade: A, Excellent)</span></strong>
+  <div class="education-details-group">
+    <p class="education-program"><em>Erasmus Mundus European Master's in Clinical Linguistics (EMCL)</em></p>
+    <p class="education-details">University of Potsdam (DE), Groningen (NL), and Eastern Finland (FI)</p>
+    <p class="education-dissertation">Thesis: <span class="education-highlight">"The Impact of Focus Operators on the Processing of Long-Distance Dependencies: A Study on Eastern Armenian"</span></p>
+    <p class="education-advisors">Advisors: Shravan Vasishth and Lars Meyer</p>
+    <p class="education-date">2013 - 2015</p>
+  </div>
+</li>
+    
   
-  <li style="padding-bottom:15px"><strong>Avetisyan, S.</strong>, Lago, S., & Vasishth, S. (2018). Case and (mis)interpretation in number attraction: Evidence from Eastern Armenian. Architectures and Mechanisms for Language Processing (AMLaP), Berlin, Germany, September 6-8. <a href="https://osf.io/kq32y/?view_only=d6fb76ead449470bba895e92e947e122">[poster]</a> </li>
+     <li>
+  <i class="fas fa-graduation-cap"></i> 
+  <strong class="education-title">Diploma in Teaching English</strong>
+  <div class="education-details-group">
+    <p class="education-program"><em>Graduate Program in Linguistics, English Language, and Teaching</em></p>
+    <p class="education-details">Yerevan State Linguistic University named aft. V. Brusov</p>
+    <p class="education-date">2002 - 2007</p>
+  </div>
+</li>  
+      
+
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<section id="research">
+  <div class="container">
+    <h2 class="section-title">Research Interests</h2>
+    <div class="research-tags">
+      <ul>
+        <li>Experimental Linguistics</li>
+        <li>Sentence Processing</li>
+        <li>Cognitive Science</li>
+        <li>Quantitative and Qualitative Data Analysis</li>
+        <li>Causal Inference</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
   
-  <li><strong>Avetisyan, S.</strong>, Lago, S., & Vasishth, S. (2018). Case and misinterpretation in number attraction effects in Eastern Armenian. 31st Annual CUNY Sentence Processing Conference, Davis, USA, March 15-17. <a href="https://osf.io/e986b/">[poster]</a> </li>
+ <section id="publications">
+  <div class="container">
+    <h2 class="section-title">Publications</h2>
+    
+    
+    
+            <div class="publication-item">
+      <i class="fas fa-file-alt publication-icon"></i>
+      <div class="publication-content">
+        <p class="publication-text">Avetisyan, S. (2024). <em>Case and misinterpretation in agreement processing</em> (Doctoral dissertation, Universität Potsdam).</p>
+        <a href="https://publishup.uni-potsdam.de/opus4-ubp/frontdoor/index/index/year/2024/docId/65851" class="view-link" target="_blank">View Publication →</a>
+      </div>
+    </div>
+    
+        <div class="publication-item">
+      <i class="fas fa-file-alt publication-icon"></i>
+      <div class="publication-content">
+        <p class="publication-text">Paape, D., Avetisyan, S., Lago, S., & Vasishth, S. (2021). Modeling misretrieval and feature substitution in agreement attraction: A computational evaluation. <em>Cognitive Science</em>, 45(8), e13019.</p>
+        <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/cogs.13019" class="view-link" target="_blank">View Publication →</a>
+      </div>
+    </div>
+    
+    <div class="publication-item">
+    <i class="fas fa-file-alt publication-icon"></i>
+      <div class="publication-content">
+        <p class="publication-text">Avetisyan, S., Lago, S., & Vasishth, S. (2020). Does case marking affect agreement attraction in comprehension? <em>Journal of Memory and Language</em>, 112, 104087.</p>
+        <a href="https://www.sciencedirect.com/science/article/pii/S0749596X20300012" class="view-link" target="_blank">View Publication →</a>
+      </div>
+    </div>
+ 
+   
+    
+    <!-- Conference Presentations Section -->
+    <h3>Conference Presentations</h3>
+    
+    <div class="publication-item">
+   <i class="fas fa-thumbtack publication-icon rotate-45" style="color: var(--secondary);"></i>
+      <div class="publication-content">
+        <p class="publication-text">Avetisyan, S., Lago, S., & Vasishth, S. (2020). Dissociation of case and number information in agreement processing. Architectures and Mechanisms for Language Processing (AMLaP), Potsdam, Germany, September 3-5.</p>
+        <a href="https://osf.io/gyhkf" class="view-link" target="_blank">View Abstract →</a>
+     </div>
+    </div>    
+    
+            <div class="publication-item">
+   <i class="fas fa-thumbtack publication-icon rotate-45" style="color: var(--secondary);"></i>
+      <div class="publication-content">
+        <p class="publication-text">Paape, D., Avetisyan, S., Lago, S., & Vasishth, S. (2019). Modeling misretrieval and feature substitution in agreement attraction. Architectures and Mechanisms for Language Processing (AMLaP), Moscow, Russia, September 6-8.</p>
+        <a href="https://www.ling.uni-potsdam.de/~paape/PaapeEtAl-AMLaP2019-modeling.pdf" class="view-link" target="_blank">View Poster →</a>
+      </div>
+    </div>
+    
+    <div class="publication-item">
+   <i class="fas fa-thumbtack publication-icon rotate-45" style="color: var(--secondary);"></i>
+      <div class="publication-content">
+        <p class="publication-text">Avetisyan, S., Lago, S., & Vasishth, S. (2018). Case and (mis)interpretation in number attraction: Evidence from Eastern Armenian. Architectures and Mechanisms for Language Processing (AMLaP), Berlin, Germany, September 6-8.</p>
+      <a href="https://osf.io/kq32y?view_only=d6fb76ead449470bba895e92e947e122" class="view-link" target="_blank">View Poster →</a>
+      </div>
+    </div>
+    
+    <div class="publication-item">
+   <i class="fas fa-thumbtack publication-icon rotate-45" style="color: var(--secondary);"></i>
+      <div class="publication-content">
+        <p class="publication-text">Avetisyan, S., Lago, S., & Vasishth, S. (2018). Case and misinterpretation in number attraction effects in Eastern Armenian. 31st Annual CUNY Sentence Processing Conference, Davis, USA, March 15-17.</p>
+      <a href="https://osf.io/e986b" class="view-link" target="_blank">View Poster →</a>
+      </div>
+    </div>
+     
+    
+  </div>
+</section>
 
-</ul>
 
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <div class="contact-label">Email</div>
+              <a href="mailto:serine@example.com">serine dot avetisyan at gmail dot com</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <div class="contact-label" >Location</div>
+              <p>CA 91201, USA</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form-container">
+          <!-- Formspree contact form with your endpoint -->
+        <form action="https://formspree.io/f/xrbplwyo" method="POST" class="contact-form" style="margin-top: 0px;">
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" class="form-input"  required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input"  required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-textarea"  required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-button">Send Message</button>
+        </form>
+        
+        <!--<div id="success-message" class="success-message">
+          Thank you for your message! I'll get back to you soon. -->
+          
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h1>Teaching</h1>
-<ul style="list-style-type:none; margin-left: 8.5em; text-indent: -8.5em">
-  <li>Summer 2016 &nbsp Undergraduate course 'Introduction to Language Processing' at University of Potsdam, Germany (teaching assistant).</li>
-</ul>
+  <footer>
+    <div class="footer-content">
+      
+      <div class="footer-links">
+        <a href="#introduction">Home</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+      
+      <p class="copyright">© 2025 Serine Avetisyan | AI-Assisted Design</p>
+    </div>
+  </footer>
 
+  <a href="#" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
 
-<h1>Scholarships</h1>
-<ul style="list-style-type:none; margin-left: 7.3em; text-indent: -7.3em">
-  <li style="padding-bottom:15px">2016-2019 &nbsp International Doctorate in Experimental Approaches to Language and Brain (IDEALAB) Category A Fellowship</li>
-  <li>2013-2015 &nbsp Erasmus Mundus Category A Scholarship</li>
-</ul>
-
-
-
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Mobile menu toggle
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      
+      menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+      
+      // Close mobile menu when clicking a link
+      const navItems = document.querySelectorAll(".nav-links a");
+      navItems.forEach(item => {
+        item.addEventListener("click", function() {
+          navLinks.classList.remove("active");
+          menuToggle.classList.remove("active");
+        });
+      });
+      
+      // Scroll animations
+      const containers = document.querySelectorAll('.container');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      containers.forEach(container => observer.observe(container));
+      
+      // Dark mode toggle
+      const themeToggle = document.querySelector(".theme-toggle");
+      const themeIcon = themeToggle.querySelector("i");
+      
+      // Check for saved theme preference or use default
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      }
+      
+      themeToggle.addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+        
+        if (document.body.classList.contains("dark-mode")) {
+          themeIcon.classList.remove("fa-moon");
+          themeIcon.classList.add("fa-sun");
+          localStorage.setItem('theme', 'dark');
+        } else {
+          themeIcon.classList.remove("fa-sun");
+          themeIcon.classList.add("fa-moon");
+          localStorage.setItem('theme', 'light');
+        }
+      });
+      
+      // Back to top button
+      const backToTop = document.querySelector(".back-to-top");
+      
+      window.addEventListener("scroll", function() {
+        if (window.pageYOffset > 300) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
+      });
+      
+      backToTop.addEventListener("click", function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+      
+      // Active nav link on scroll
+      const sections = document.querySelectorAll("section");
+      
+      window.addEventListener("scroll", function() {
+        let current = "";
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          
+          if (pageYOffset >= sectionTop - 150) {
+            current = section.getAttribute("id");
+          }
+        });
+        
+        navItems.forEach(item => {
+          item.classList.remove("active");
+          if (item.getAttribute("href").slice(1) === current) {
+            item.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
 
 
 </body>
-
 </html>
